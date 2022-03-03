@@ -3,6 +3,8 @@ package edu.gianluca.parkinglotcontrol.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,8 +37,8 @@ public class ParkingSpotService {
         return spotRepository.findTicket(parkingTicket);
     }
 
-    public List<ParkingSpotModel> getAllParkingTickets() {
-        return spotRepository.findAll();
+    public Page<ParkingSpotModel> getAllParkingTickets(Pageable pageable) {
+        return spotRepository.findAll(pageable);
     }
 
     @Transactional
