@@ -1,7 +1,5 @@
 package edu.gianluca.parkinglotcontrol.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
